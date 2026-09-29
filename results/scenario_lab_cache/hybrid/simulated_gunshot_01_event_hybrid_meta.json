@@ -1,0 +1,27 @@
+{
+  "metrics": {
+    "scenario_id": "simulated_gunshot_01_event",
+    "method": "hybrid",
+    "exec_time_ms": 1245.89,
+    "rtf": 0.311471,
+    "input_snr_db": 10.0001,
+    "output_snr_db": 10.3247,
+    "gain_db": 0.3246,
+    "stoi": 0.886,
+    "pesq": 1.7747
+  },
+  "telemetry": {
+    "anc_engine": "teammate_frozen",
+    "processing_time_sec": 1.2455762999998115,
+    "real_time_factor": 0.31139407499995286,
+    "duration_sec": 4.0,
+    "speech_confidence": 0.6739793523544408,
+    "average_regime_confidence": 0.8265060150375939,
+    "average_weights": {
+      "wiener": 0.2875693440437317,
+      "neural": 0.13028468191623688,
+      "anc": 0.16773046553134918,
+      "passthrough": 0.414415568113327
+    }
+  }
+}

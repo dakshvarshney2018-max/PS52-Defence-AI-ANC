@@ -1,0 +1,26 @@
+{
+  "metrics": {
+    "scenario_id": "artillery_01_event",
+    "method": "fxlms",
+    "exec_time_ms": 1155.64,
+    "rtf": 0.288909,
+    "input_snr_db": 10.0,
+    "output_snr_db": 6.7427,
+    "gain_db": -3.2573,
+    "stoi": 0.8293,
+    "pesq": 1.3661
+  },
+  "telemetry": {
+    "name": "teammate_frozen",
+    "semantic_label": "Offline Simulated-Reference Acoustic ANC",
+    "filter_length": 64,
+    "mu": 0.01,
+    "epsilon": 1e-08,
+    "leakage": 0.0,
+    "max_abs_weight": 2.2051319253499355,
+    "weight_l2_norm": 5.307292805460331,
+    "max_error_power": 0.2567877173423767,
+    "impulse_guard_inside_baseline": false,
+    "anc_active": true
+  }
+}

@@ -1,0 +1,19 @@
+# Deterministic, isolated defence-scenario demonstration configuration.
+random_seed: 52
+output_sample_rate: 16000
+speech_clips_per_category: 5
+speech_duration_seconds: 4.0
+continuous_target_snrs_db: [0, 5, 10, 15]
+event_target_snr_db: 10
+event_positions_seconds: [0.8, 1.2, 1.6, 2.0, 2.4]
+event_window_seconds:
+  simulated_gunshot: 1.0
+  artillery: 2.0
+background_noise_file: wind.wav
+background_snr_db: 20
+clean_speech_directory: data/processed/speech
+defence_noise_directory: data/defence_processed
+output_directory: data/processed/defence_scenarios
+metadata_path: data/metadata/defence_scenario_metadata.csv
+source_metadata_path: data/metadata/defence_audio_sources.csv
+report_path: results/defence_scenarios/defence_scenario_generation_report.md

@@ -1,0 +1,27 @@
+{
+  "metrics": {
+    "scenario_id": "vehicle_engine_01_+00db",
+    "method": "hybrid",
+    "exec_time_ms": 583.21,
+    "rtf": 0.145802,
+    "input_snr_db": -0.0,
+    "output_snr_db": 8.2264,
+    "gain_db": 8.2264,
+    "stoi": 0.8807,
+    "pesq": 1.6328
+  },
+  "telemetry": {
+    "anc_engine": "teammate_frozen",
+    "processing_time_sec": 0.5827946999997948,
+    "real_time_factor": 0.1456986749999487,
+    "duration_sec": 4.0,
+    "speech_confidence": 0.6453295099116922,
+    "average_regime_confidence": 0.9760869674185464,
+    "average_weights": {
+      "wiener": 0.3997213840484619,
+      "neural": 0.11569753289222717,
+      "anc": 0.46015939116477966,
+      "passthrough": 0.024421753361821175
+    }
+  }
+}

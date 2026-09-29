@@ -1,0 +1,27 @@
+{
+  "metrics": {
+    "scenario_id": "artillery_01_event",
+    "method": "hybrid",
+    "exec_time_ms": 1407.38,
+    "rtf": 0.351844,
+    "input_snr_db": 10.0,
+    "output_snr_db": 10.8861,
+    "gain_db": 0.8861,
+    "stoi": 0.8619,
+    "pesq": 1.6555
+  },
+  "telemetry": {
+    "anc_engine": "teammate_frozen",
+    "processing_time_sec": 1.4071186999999554,
+    "real_time_factor": 0.35177967499998886,
+    "duration_sec": 4.0,
+    "speech_confidence": 0.6917621828319871,
+    "average_regime_confidence": 0.8558406015037595,
+    "average_weights": {
+      "wiener": 0.29112955927848816,
+      "neural": 0.13034488260746002,
+      "anc": 0.16089387238025665,
+      "passthrough": 0.41763171553611755
+    }
+  }
+}

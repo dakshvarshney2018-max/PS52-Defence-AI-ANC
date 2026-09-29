@@ -1,0 +1,26 @@
+{
+  "metrics": {
+    "scenario_id": "vehicle_engine_01_+00db",
+    "method": "fxlms",
+    "exec_time_ms": 1045.06,
+    "rtf": 0.261265,
+    "input_snr_db": -0.0,
+    "output_snr_db": 14.6129,
+    "gain_db": 14.613,
+    "stoi": 0.8908,
+    "pesq": 1.8254
+  },
+  "telemetry": {
+    "name": "teammate_frozen",
+    "semantic_label": "Offline Simulated-Reference Acoustic ANC",
+    "filter_length": 64,
+    "mu": 0.01,
+    "epsilon": 1e-08,
+    "leakage": 0.0,
+    "max_abs_weight": 0.23331907890370948,
+    "weight_l2_norm": 0.5068438298860778,
+    "max_error_power": 0.14326705038547516,
+    "impulse_guard_inside_baseline": false,
+    "anc_active": true
+  }
+}

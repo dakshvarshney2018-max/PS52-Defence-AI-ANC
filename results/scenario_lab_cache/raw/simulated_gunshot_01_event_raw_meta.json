@@ -1,0 +1,17 @@
+{
+  "metrics": {
+    "scenario_id": "simulated_gunshot_01_event",
+    "method": "raw",
+    "exec_time_ms": 0.0,
+    "rtf": 0.0,
+    "input_snr_db": 10.0001,
+    "output_snr_db": 10.0001,
+    "gain_db": 0.0,
+    "stoi": 0.8869,
+    "pesq": 1.9811
+  },
+  "telemetry": {
+    "method": "raw",
+    "status": "ORIGINAL_NOISY"
+  }
+}

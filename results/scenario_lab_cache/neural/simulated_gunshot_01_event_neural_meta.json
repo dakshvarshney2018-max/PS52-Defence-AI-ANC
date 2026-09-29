@@ -1,0 +1,17 @@
+{
+  "metrics": {
+    "scenario_id": "simulated_gunshot_01_event",
+    "method": "neural",
+    "exec_time_ms": 95.24,
+    "rtf": 0.023809,
+    "input_snr_db": 10.0001,
+    "output_snr_db": 7.4843,
+    "gain_db": -2.5158,
+    "stoi": 0.8794,
+    "pesq": 1.8646
+  },
+  "telemetry": {
+    "speech_confidence": 0.49185746908187866,
+    "mean_gain": 0.0
+  }
+}

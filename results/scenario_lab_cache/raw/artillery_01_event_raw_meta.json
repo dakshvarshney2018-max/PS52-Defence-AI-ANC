@@ -1,0 +1,17 @@
+{
+  "metrics": {
+    "scenario_id": "artillery_01_event",
+    "method": "raw",
+    "exec_time_ms": 0.0,
+    "rtf": 0.0,
+    "input_snr_db": 10.0,
+    "output_snr_db": 10.0,
+    "gain_db": 0.0,
+    "stoi": 0.8579,
+    "pesq": 1.6675
+  },
+  "telemetry": {
+    "method": "raw",
+    "status": "ORIGINAL_NOISY"
+  }
+}

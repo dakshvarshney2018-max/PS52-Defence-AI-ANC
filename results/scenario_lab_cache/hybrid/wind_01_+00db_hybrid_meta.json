@@ -1,0 +1,27 @@
+{
+  "metrics": {
+    "scenario_id": "wind_01_+00db",
+    "method": "hybrid",
+    "exec_time_ms": 1197.89,
+    "rtf": 0.299474,
+    "input_snr_db": -0.0,
+    "output_snr_db": 7.5318,
+    "gain_db": 7.5318,
+    "stoi": 0.8631,
+    "pesq": 1.337
+  },
+  "telemetry": {
+    "anc_engine": "teammate_frozen",
+    "processing_time_sec": 1.1967955000000075,
+    "real_time_factor": 0.29919887500000186,
+    "duration_sec": 4.0,
+    "speech_confidence": 0.6300464328631317,
+    "average_regime_confidence": 0.950783709273183,
+    "average_weights": {
+      "wiener": 0.3954091966152191,
+      "neural": 0.12125877290964127,
+      "anc": 0.441205769777298,
+      "passthrough": 0.042126309126615524
+    }
+  }
+}

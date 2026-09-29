@@ -1,0 +1,17 @@
+{
+  "metrics": {
+    "scenario_id": "helicopter_01_+00db",
+    "method": "neural",
+    "exec_time_ms": 49.39,
+    "rtf": 0.012349,
+    "input_snr_db": -0.0,
+    "output_snr_db": 2.1569,
+    "gain_db": 2.1569,
+    "stoi": 0.7246,
+    "pesq": 1.0658
+  },
+  "telemetry": {
+    "speech_confidence": 0.34740540385246277,
+    "mean_gain": 0.0
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "metrics": {
+    "scenario_id": "artillery_01_event",
+    "method": "neural",
+    "exec_time_ms": 76.56,
+    "rtf": 0.019141,
+    "input_snr_db": 10.0,
+    "output_snr_db": 7.4088,
+    "gain_db": -2.5912,
+    "stoi": 0.8481,
+    "pesq": 1.5587
+  },
+  "telemetry": {
+    "speech_confidence": 0.48778823018074036,
+    "mean_gain": 0.0
+  }
+}

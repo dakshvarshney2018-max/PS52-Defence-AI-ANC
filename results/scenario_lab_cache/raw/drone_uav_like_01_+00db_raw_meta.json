@@ -1,0 +1,17 @@
+{
+  "metrics": {
+    "scenario_id": "drone_uav_like_01_+00db",
+    "method": "raw",
+    "exec_time_ms": 0.0,
+    "rtf": 0.0,
+    "input_snr_db": 0.0,
+    "output_snr_db": 0.0,
+    "gain_db": 0.0,
+    "stoi": 0.8297,
+    "pesq": 1.1294
+  },
+  "telemetry": {
+    "method": "raw",
+    "status": "ORIGINAL_NOISY"
+  }
+}

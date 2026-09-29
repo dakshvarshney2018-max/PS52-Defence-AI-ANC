@@ -1,0 +1,26 @@
+{
+  "metrics": {
+    "scenario_id": "wind_01_+00db",
+    "method": "fxlms",
+    "exec_time_ms": 771.99,
+    "rtf": 0.192998,
+    "input_snr_db": -0.0,
+    "output_snr_db": 14.3042,
+    "gain_db": 14.3042,
+    "stoi": 0.8906,
+    "pesq": 1.5404
+  },
+  "telemetry": {
+    "name": "teammate_frozen",
+    "semantic_label": "Offline Simulated-Reference Acoustic ANC",
+    "filter_length": 64,
+    "mu": 0.01,
+    "epsilon": 1e-08,
+    "leakage": 0.0,
+    "max_abs_weight": 0.4780395235741369,
+    "weight_l2_norm": 0.5924851574523244,
+    "max_error_power": 0.14441142976284027,
+    "impulse_guard_inside_baseline": false,
+    "anc_active": true
+  }
+}

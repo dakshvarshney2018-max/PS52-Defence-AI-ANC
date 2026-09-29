@@ -1,0 +1,784 @@
+{
+  "evaluation_timestamp": "2026-09-04 10:52:58 UTC",
+  "pesq_specification": {
+    "library": "pesq (ITU-T P.862 / P.862.2 C-wrapper)",
+    "version": "0.0.4",
+    "mode": "wb (wideband ITU-T P.862.2)",
+    "sample_rate_hz": 16000,
+    "score_scale": "MOS-LQO (1.02 to 4.5)",
+    "audio_alignment": "Preserved exact 1D sample lengths without modification"
+  },
+  "target_pesq_greater_than_2_5": {
+    "target_value": 2.5,
+    "overall_300_mixtures_mean_hybrid": 1.7338,
+    "overall_300_achieved_on_aggregate": false,
+    "overall_300_count_ge_2_5": 45,
+    "overall_300_total_valid": 300,
+    "overall_110_defence_mean_hybrid": 1.6555,
+    "overall_110_achieved_on_aggregate": false,
+    "overall_110_count_ge_2_5": 6,
+    "overall_110_total_valid": 110
+  },
+  "overall_300_mixtures": {
+    "raw": {
+      "count": 300,
+      "mean": 1.6147,
+      "median": 1.4112,
+      "std": 0.6266,
+      "min": 1.0173,
+      "max": 3.4173
+    },
+    "wiener": {
+      "count": 300,
+      "mean": 1.7215,
+      "median": 1.5452,
+      "std": 0.6485,
+      "min": 1.0321,
+      "max": 3.9241
+    },
+    "neural": {
+      "count": 300,
+      "mean": 1.5775,
+      "median": 1.3931,
+      "std": 0.5743,
+      "min": 1.0176,
+      "max": 3.1927
+    },
+    "fxlms": {
+      "count": 300,
+      "mean": 1.9132,
+      "median": 1.8177,
+      "std": 0.5029,
+      "min": 1.0354,
+      "max": 3.4667
+    },
+    "hybrid": {
+      "count": 300,
+      "mean": 1.7338,
+      "median": 1.5335,
+      "std": 0.6576,
+      "min": 1.0256,
+      "max": 3.502
+    }
+  },
+  "by_target_snr": {
+    "-5.0": {
+      "raw": {
+        "count": 51,
+        "mean": 1.218,
+        "median": 1.0555,
+        "std": 0.3094,
+        "min": 1.0173,
+        "max": 2.1973
+      },
+      "wiener": {
+        "count": 51,
+        "mean": 1.1428,
+        "median": 1.0757,
+        "std": 0.1435,
+        "min": 1.0321,
+        "max": 1.5382
+      },
+      "neural": {
+        "count": 51,
+        "mean": 1.2111,
+        "median": 1.065,
+        "std": 0.2935,
+        "min": 1.0176,
+        "max": 2.1574
+      },
+      "fxlms": {
+        "count": 51,
+        "mean": 1.4249,
+        "median": 1.4385,
+        "std": 0.2944,
+        "min": 1.0453,
+        "max": 2.3
+      },
+      "hybrid": {
+        "count": 51,
+        "mean": 1.2444,
+        "median": 1.0914,
+        "std": 0.2913,
+        "min": 1.0256,
+        "max": 2.1543
+      }
+    },
+    "0.0": {
+      "raw": {
+        "count": 51,
+        "mean": 1.2782,
+        "median": 1.1301,
+        "std": 0.3673,
+        "min": 1.0253,
+        "max": 2.5171
+      },
+      "wiener": {
+        "count": 51,
+        "mean": 1.237,
+        "median": 1.1373,
+        "std": 0.2032,
+        "min": 1.0541,
+        "max": 1.6846
+      },
+      "neural": {
+        "count": 51,
+        "mean": 1.267,
+        "median": 1.1239,
+        "std": 0.3451,
+        "min": 1.026,
+        "max": 2.4578
+      },
+      "fxlms": {
+        "count": 51,
+        "mean": 1.5776,
+        "median": 1.6283,
+        "std": 0.3849,
+        "min": 1.0354,
+        "max": 2.4878
+      },
+      "hybrid": {
+        "count": 51,
+        "mean": 1.3456,
+        "median": 1.1513,
+        "std": 0.3844,
+        "min": 1.0553,
+        "max": 2.5539
+      }
+    },
+    "5.0": {
+      "raw": {
+        "count": 51,
+        "mean": 1.3869,
+        "median": 1.1814,
+        "std": 0.4189,
+        "min": 1.051,
+        "max": 2.6825
+      },
+      "wiener": {
+        "count": 51,
+        "mean": 1.432,
+        "median": 1.297,
+        "std": 0.3156,
+        "min": 1.1157,
+        "max": 2.254
+      },
+      "neural": {
+        "count": 51,
+        "mean": 1.3665,
+        "median": 1.1753,
+        "std": 0.3863,
+        "min": 1.0515,
+        "max": 2.5798
+      },
+      "fxlms": {
+        "count": 51,
+        "mean": 1.9467,
+        "median": 1.8562,
+        "std": 0.3313,
+        "min": 1.2492,
+        "max": 2.6949
+      },
+      "hybrid": {
+        "count": 51,
+        "mean": 1.5032,
+        "median": 1.2244,
+        "std": 0.4608,
+        "min": 1.0957,
+        "max": 2.8046
+      }
+    },
+    "10.0": {
+      "raw": {
+        "count": 51,
+        "mean": 1.5834,
+        "median": 1.2953,
+        "std": 0.4812,
+        "min": 1.097,
+        "max": 2.6988
+      },
+      "wiener": {
+        "count": 51,
+        "mean": 1.7379,
+        "median": 1.6588,
+        "std": 0.3881,
+        "min": 1.2837,
+        "max": 2.848
+      },
+      "neural": {
+        "count": 51,
+        "mean": 1.5514,
+        "median": 1.2974,
+        "std": 0.4397,
+        "min": 1.0986,
+        "max": 2.5919
+      },
+      "fxlms": {
+        "count": 51,
+        "mean": 2.1007,
+        "median": 2.0868,
+        "std": 0.3989,
+        "min": 1.27,
+        "max": 3.1223
+      },
+      "hybrid": {
+        "count": 51,
+        "mean": 1.7389,
+        "median": 1.5108,
+        "std": 0.5075,
+        "min": 1.195,
+        "max": 2.8859
+      }
+    },
+    "15.0": {
+      "raw": {
+        "count": 48,
+        "mean": 1.8885,
+        "median": 1.6254,
+        "std": 0.5523,
+        "min": 1.2467,
+        "max": 3.2323
+      },
+      "wiener": {
+        "count": 48,
+        "mean": 2.1785,
+        "median": 2.2268,
+        "std": 0.4729,
+        "min": 1.617,
+        "max": 3.4748
+      },
+      "neural": {
+        "count": 48,
+        "mean": 1.834,
+        "median": 1.6235,
+        "std": 0.4973,
+        "min": 1.2487,
+        "max": 2.8798
+      },
+      "fxlms": {
+        "count": 48,
+        "mean": 2.1908,
+        "median": 2.2324,
+        "std": 0.4329,
+        "min": 1.2913,
+        "max": 3.28
+      },
+      "hybrid": {
+        "count": 48,
+        "mean": 2.0687,
+        "median": 1.8862,
+        "std": 0.5576,
+        "min": 1.3862,
+        "max": 3.2244
+      }
+    },
+    "20.0": {
+      "raw": {
+        "count": 48,
+        "mean": 2.395,
+        "median": 2.1677,
+        "std": 0.6664,
+        "min": 1.5162,
+        "max": 3.4173
+      },
+      "wiener": {
+        "count": 48,
+        "mean": 2.6843,
+        "median": 2.6833,
+        "std": 0.4925,
+        "min": 1.95,
+        "max": 3.9241
+      },
+      "neural": {
+        "count": 48,
+        "mean": 2.2924,
+        "median": 2.1321,
+        "std": 0.6015,
+        "min": 1.5004,
+        "max": 3.1927
+      },
+      "fxlms": {
+        "count": 48,
+        "mean": 2.2762,
+        "median": 2.294,
+        "std": 0.4877,
+        "min": 1.3168,
+        "max": 3.4667
+      },
+      "hybrid": {
+        "count": 48,
+        "mean": 2.571,
+        "median": 2.5021,
+        "std": 0.601,
+        "min": 1.7349,
+        "max": 3.502
+      }
+    }
+  },
+  "by_noise_regime": {
+    "impulse": {
+      "raw": {
+        "count": 72,
+        "mean": 2.2309,
+        "median": 2.1598,
+        "std": 0.5463,
+        "min": 1.4508,
+        "max": 3.4173
+      },
+      "wiener": {
+        "count": 72,
+        "mean": 1.8151,
+        "median": 1.7263,
+        "std": 0.5099,
+        "min": 1.103,
+        "max": 2.9162
+      },
+      "neural": {
+        "count": 72,
+        "mean": 2.1222,
+        "median": 2.0651,
+        "std": 0.4789,
+        "min": 1.4079,
+        "max": 3.1927
+      },
+      "fxlms": {
+        "count": 72,
+        "mean": 1.7881,
+        "median": 1.7265,
+        "std": 0.6898,
+        "min": 1.0354,
+        "max": 3.4667
+      },
+      "hybrid": {
+        "count": 72,
+        "mean": 2.313,
+        "median": 2.2633,
+        "std": 0.5593,
+        "min": 1.3917,
+        "max": 3.5015
+      }
+    },
+    "non_stationary": {
+      "raw": {
+        "count": 66,
+        "mean": 1.5983,
+        "median": 1.2994,
+        "std": 0.5978,
+        "min": 1.066,
+        "max": 3.0598
+      },
+      "wiener": {
+        "count": 66,
+        "mean": 1.6293,
+        "median": 1.3647,
+        "std": 0.598,
+        "min": 1.0679,
+        "max": 2.9587
+      },
+      "neural": {
+        "count": 66,
+        "mean": 1.5765,
+        "median": 1.2935,
+        "std": 0.5656,
+        "min": 1.0686,
+        "max": 2.9594
+      },
+      "fxlms": {
+        "count": 66,
+        "mean": 1.7722,
+        "median": 1.7651,
+        "std": 0.2801,
+        "min": 1.1933,
+        "max": 2.3182
+      },
+      "hybrid": {
+        "count": 66,
+        "mean": 1.6767,
+        "median": 1.3809,
+        "std": 0.6234,
+        "min": 1.0822,
+        "max": 3.1639
+      }
+    },
+    "stationary": {
+      "raw": {
+        "count": 162,
+        "mean": 1.3475,
+        "median": 1.1232,
+        "std": 0.4568,
+        "min": 1.0173,
+        "max": 3.1854
+      },
+      "wiener": {
+        "count": 162,
+        "mean": 1.7175,
+        "median": 1.4371,
+        "std": 0.7142,
+        "min": 1.0321,
+        "max": 3.9241
+      },
+      "neural": {
+        "count": 162,
+        "mean": 1.3359,
+        "median": 1.1219,
+        "std": 0.4338,
+        "min": 1.0176,
+        "max": 3.0675
+      },
+      "fxlms": {
+        "count": 162,
+        "mean": 2.0263,
+        "median": 1.9847,
+        "std": 0.444,
+        "min": 1.1158,
+        "max": 3.0302
+      },
+      "hybrid": {
+        "count": 162,
+        "mean": 1.4997,
+        "median": 1.282,
+        "std": 0.5462,
+        "min": 1.0256,
+        "max": 3.502
+      }
+    }
+  },
+  "overall_110_defence": {
+    "raw": {
+      "count": 110,
+      "mean": 1.5457,
+      "median": 1.4556,
+      "std": 0.4197,
+      "min": 1.0616,
+      "max": 3.6742
+    },
+    "wiener": {
+      "count": 110,
+      "mean": 1.6651,
+      "median": 1.5474,
+      "std": 0.5083,
+      "min": 1.0681,
+      "max": 3.8188
+    },
+    "neural": {
+      "count": 110,
+      "mean": 1.4772,
+      "median": 1.4166,
+      "std": 0.3383,
+      "min": 1.0595,
+      "max": 3.0063
+    },
+    "fxlms": {
+      "count": 110,
+      "mean": 1.7618,
+      "median": 1.6956,
+      "std": 0.4301,
+      "min": 1.0792,
+      "max": 2.9812
+    },
+    "hybrid": {
+      "count": 110,
+      "mean": 1.6555,
+      "median": 1.5852,
+      "std": 0.4262,
+      "min": 1.0738,
+      "max": 3.3555
+    }
+  },
+  "by_defence_category": {
+    "artillery": {
+      "raw": {
+        "count": 5,
+        "mean": 2.0432,
+        "median": 1.6675,
+        "std": 0.8164,
+        "min": 1.5661,
+        "max": 3.6742
+      },
+      "wiener": {
+        "count": 5,
+        "mean": 1.9028,
+        "median": 1.4847,
+        "std": 0.8376,
+        "min": 1.4669,
+        "max": 3.5777
+      },
+      "neural": {
+        "count": 5,
+        "mean": 1.846,
+        "median": 1.5587,
+        "std": 0.5826,
+        "min": 1.4846,
+        "max": 3.0063
+      },
+      "fxlms": {
+        "count": 5,
+        "mean": 1.368,
+        "median": 1.3661,
+        "std": 0.0596,
+        "min": 1.2823,
+        "max": 1.466
+      },
+      "hybrid": {
+        "count": 5,
+        "mean": 1.9836,
+        "median": 1.7101,
+        "std": 0.6907,
+        "min": 1.5468,
+        "max": 3.3555
+      }
+    },
+    "drone_uav_like": {
+      "raw": {
+        "count": 20,
+        "mean": 1.5414,
+        "median": 1.3998,
+        "std": 0.4054,
+        "min": 1.0946,
+        "max": 2.3926
+      },
+      "wiener": {
+        "count": 20,
+        "mean": 1.6218,
+        "median": 1.5086,
+        "std": 0.4178,
+        "min": 1.1007,
+        "max": 2.4909
+      },
+      "neural": {
+        "count": 20,
+        "mean": 1.4905,
+        "median": 1.3621,
+        "std": 0.3497,
+        "min": 1.0997,
+        "max": 2.2302
+      },
+      "fxlms": {
+        "count": 20,
+        "mean": 2.1635,
+        "median": 2.1162,
+        "std": 0.2953,
+        "min": 1.6921,
+        "max": 2.944
+      },
+      "hybrid": {
+        "count": 20,
+        "mean": 1.6861,
+        "median": 1.5602,
+        "std": 0.4295,
+        "min": 1.1983,
+        "max": 2.842
+      }
+    },
+    "helicopter": {
+      "raw": {
+        "count": 20,
+        "mean": 1.3707,
+        "median": 1.3187,
+        "std": 0.2856,
+        "min": 1.0616,
+        "max": 1.9244
+      },
+      "wiener": {
+        "count": 20,
+        "mean": 1.5506,
+        "median": 1.5677,
+        "std": 0.4106,
+        "min": 1.0723,
+        "max": 2.3892
+      },
+      "neural": {
+        "count": 20,
+        "mean": 1.325,
+        "median": 1.2949,
+        "std": 0.2329,
+        "min": 1.0595,
+        "max": 1.7805
+      },
+      "fxlms": {
+        "count": 20,
+        "mean": 1.4746,
+        "median": 1.492,
+        "std": 0.2114,
+        "min": 1.1459,
+        "max": 1.8427
+      },
+      "hybrid": {
+        "count": 20,
+        "mean": 1.4843,
+        "median": 1.4414,
+        "std": 0.3412,
+        "min": 1.0738,
+        "max": 2.1997
+      }
+    },
+    "simulated_gunshot": {
+      "raw": {
+        "count": 5,
+        "mean": 1.7727,
+        "median": 1.6547,
+        "std": 0.1702,
+        "min": 1.6015,
+        "max": 1.9811
+      },
+      "wiener": {
+        "count": 5,
+        "mean": 1.5944,
+        "median": 1.5867,
+        "std": 0.087,
+        "min": 1.4855,
+        "max": 1.6949
+      },
+      "neural": {
+        "count": 5,
+        "mean": 1.6609,
+        "median": 1.5859,
+        "std": 0.1476,
+        "min": 1.4824,
+        "max": 1.8646
+      },
+      "fxlms": {
+        "count": 5,
+        "mean": 1.3706,
+        "median": 1.3705,
+        "std": 0.143,
+        "min": 1.1488,
+        "max": 1.5787
+      },
+      "hybrid": {
+        "count": 5,
+        "mean": 1.7699,
+        "median": 1.6743,
+        "std": 0.1596,
+        "min": 1.6221,
+        "max": 2.042
+      }
+    },
+    "siren": {
+      "raw": {
+        "count": 20,
+        "mean": 1.5592,
+        "median": 1.5463,
+        "std": 0.3767,
+        "min": 1.07,
+        "max": 2.5232
+      },
+      "wiener": {
+        "count": 20,
+        "mean": 1.6159,
+        "median": 1.523,
+        "std": 0.4095,
+        "min": 1.0681,
+        "max": 2.4847
+      },
+      "neural": {
+        "count": 20,
+        "mean": 1.4752,
+        "median": 1.4872,
+        "std": 0.295,
+        "min": 1.0656,
+        "max": 2.1894
+      },
+      "fxlms": {
+        "count": 20,
+        "mean": 2.1785,
+        "median": 2.167,
+        "std": 0.4054,
+        "min": 1.443,
+        "max": 2.9812
+      },
+      "hybrid": {
+        "count": 20,
+        "mean": 1.6939,
+        "median": 1.6711,
+        "std": 0.4046,
+        "min": 1.1166,
+        "max": 2.7628
+      }
+    },
+    "vehicle_engine": {
+      "raw": {
+        "count": 20,
+        "mean": 1.6131,
+        "median": 1.4943,
+        "std": 0.405,
+        "min": 1.1225,
+        "max": 2.5769
+      },
+      "wiener": {
+        "count": 20,
+        "mean": 1.7476,
+        "median": 1.5272,
+        "std": 0.6565,
+        "min": 1.1158,
+        "max": 3.8188
+      },
+      "neural": {
+        "count": 20,
+        "mean": 1.5472,
+        "median": 1.4516,
+        "std": 0.3267,
+        "min": 1.1269,
+        "max": 2.3091
+      },
+      "fxlms": {
+        "count": 20,
+        "mean": 1.6061,
+        "median": 1.5762,
+        "std": 0.3523,
+        "min": 1.0792,
+        "max": 2.2958
+      },
+      "hybrid": {
+        "count": 20,
+        "mean": 1.726,
+        "median": 1.6732,
+        "std": 0.4394,
+        "min": 1.1286,
+        "max": 2.8095
+      }
+    },
+    "wind": {
+      "raw": {
+        "count": 20,
+        "mean": 1.4628,
+        "median": 1.3675,
+        "std": 0.3548,
+        "min": 1.09,
+        "max": 2.3
+      },
+      "wiener": {
+        "count": 20,
+        "mean": 1.748,
+        "median": 1.6687,
+        "std": 0.5053,
+        "min": 1.1389,
+        "max": 2.8436
+      },
+      "neural": {
+        "count": 20,
+        "mean": 1.4098,
+        "median": 1.3253,
+        "std": 0.306,
+        "min": 1.085,
+        "max": 2.1321
+      },
+      "fxlms": {
+        "count": 20,
+        "mean": 1.5827,
+        "median": 1.5204,
+        "std": 0.2002,
+        "min": 1.2911,
+        "max": 2.1129
+      },
+      "hybrid": {
+        "count": 20,
+        "mean": 1.5765,
+        "median": 1.4653,
+        "std": 0.3776,
+        "min": 1.1645,
+        "max": 2.5489
+      }
+    }
+  }
+}

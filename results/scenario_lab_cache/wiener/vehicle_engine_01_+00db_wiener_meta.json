@@ -1,0 +1,17 @@
+{
+  "metrics": {
+    "scenario_id": "vehicle_engine_01_+00db",
+    "method": "wiener",
+    "exec_time_ms": 94.69,
+    "rtf": 0.023672,
+    "input_snr_db": -0.0,
+    "output_snr_db": 3.5088,
+    "gain_db": 3.5088,
+    "stoi": 0.8555,
+    "pesq": 1.3254
+  },
+  "telemetry": {
+    "speech_confidence": 0.8040790651992084,
+    "mean_gain": 0.5595144629478455
+  }
+}

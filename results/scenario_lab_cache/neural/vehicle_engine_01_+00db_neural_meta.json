@@ -1,0 +1,17 @@
+{
+  "metrics": {
+    "scenario_id": "vehicle_engine_01_+00db",
+    "method": "neural",
+    "exec_time_ms": 78.69,
+    "rtf": 0.019673,
+    "input_snr_db": -0.0,
+    "output_snr_db": 3.1539,
+    "gain_db": 3.1539,
+    "stoi": 0.8478,
+    "pesq": 1.2255
+  },
+  "telemetry": {
+    "speech_confidence": 0.486579954624176,
+    "mean_gain": 0.0
+  }
+}

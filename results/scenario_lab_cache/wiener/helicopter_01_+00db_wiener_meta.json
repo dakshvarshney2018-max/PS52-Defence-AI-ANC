@@ -1,0 +1,17 @@
+{
+  "metrics": {
+    "scenario_id": "helicopter_01_+00db",
+    "method": "wiener",
+    "exec_time_ms": 122.25,
+    "rtf": 0.030563,
+    "input_snr_db": -0.0,
+    "output_snr_db": 5.6238,
+    "gain_db": 5.6238,
+    "stoi": 0.7119,
+    "pesq": 1.206
+  },
+  "telemetry": {
+    "speech_confidence": 0.6935902708606927,
+    "mean_gain": 0.38663408160209656
+  }
+}

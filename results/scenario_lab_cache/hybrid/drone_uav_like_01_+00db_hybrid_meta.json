@@ -1,0 +1,27 @@
+{
+  "metrics": {
+    "scenario_id": "drone_uav_like_01_+00db",
+    "method": "hybrid",
+    "exec_time_ms": 1145.44,
+    "rtf": 0.28636,
+    "input_snr_db": 0.0,
+    "output_snr_db": 8.1135,
+    "gain_db": 8.1135,
+    "stoi": 0.9025,
+    "pesq": 1.7247
+  },
+  "telemetry": {
+    "anc_engine": "teammate_frozen",
+    "processing_time_sec": 1.145212000000356,
+    "real_time_factor": 0.286303000000089,
+    "duration_sec": 4.0,
+    "speech_confidence": 0.638462416139606,
+    "average_regime_confidence": 0.9874390977443609,
+    "average_weights": {
+      "wiener": 0.40177321434020996,
+      "neural": 0.11176607757806778,
+      "anc": 0.4753241539001465,
+      "passthrough": 0.011136532761156559
+    }
+  }
+}

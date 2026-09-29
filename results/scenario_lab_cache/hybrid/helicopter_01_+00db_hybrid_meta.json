@@ -1,0 +1,27 @@
+{
+  "metrics": {
+    "scenario_id": "helicopter_01_+00db",
+    "method": "hybrid",
+    "exec_time_ms": 1586.69,
+    "rtf": 0.396672,
+    "input_snr_db": -0.0,
+    "output_snr_db": 10.4505,
+    "gain_db": 10.4506,
+    "stoi": 0.7986,
+    "pesq": 1.4771
+  },
+  "telemetry": {
+    "anc_engine": "teammate_frozen",
+    "processing_time_sec": 1.5853411000007327,
+    "real_time_factor": 0.3963352750001832,
+    "duration_sec": 4.0,
+    "speech_confidence": 0.5204978373565777,
+    "average_regime_confidence": 0.9707954887218045,
+    "average_weights": {
+      "wiener": 0.38571441173553467,
+      "neural": 0.11092961579561234,
+      "anc": 0.49197766184806824,
+      "passthrough": 0.011378293856978416
+    }
+  }
+}

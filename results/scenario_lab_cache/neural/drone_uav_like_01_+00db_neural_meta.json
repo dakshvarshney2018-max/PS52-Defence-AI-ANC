@@ -1,0 +1,17 @@
+{
+  "metrics": {
+    "scenario_id": "drone_uav_like_01_+00db",
+    "method": "neural",
+    "exec_time_ms": 63.08,
+    "rtf": 0.015771,
+    "input_snr_db": 0.0,
+    "output_snr_db": 2.6454,
+    "gain_db": 2.6454,
+    "stoi": 0.8272,
+    "pesq": 1.1279
+  },
+  "telemetry": {
+    "speech_confidence": 0.5321213603019714,
+    "mean_gain": 0.0
+  }
+}

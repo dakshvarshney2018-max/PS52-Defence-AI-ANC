@@ -1,0 +1,26 @@
+{
+  "metrics": {
+    "scenario_id": "simulated_gunshot_01_event",
+    "method": "fxlms",
+    "exec_time_ms": 1115.93,
+    "rtf": 0.278982,
+    "input_snr_db": 10.0001,
+    "output_snr_db": -5.6475,
+    "gain_db": -15.6476,
+    "stoi": 0.7687,
+    "pesq": 1.4473
+  },
+  "telemetry": {
+    "name": "teammate_frozen",
+    "semantic_label": "Offline Simulated-Reference Acoustic ANC",
+    "filter_length": 64,
+    "mu": 0.01,
+    "epsilon": 1e-08,
+    "leakage": 0.0,
+    "max_abs_weight": 1.7487534654783006,
+    "weight_l2_norm": 6.555660449930587,
+    "max_error_power": 7.02972936630249,
+    "impulse_guard_inside_baseline": false,
+    "anc_active": true
+  }
+}

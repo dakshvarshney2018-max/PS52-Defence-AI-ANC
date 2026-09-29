@@ -1,0 +1,17 @@
+{
+  "metrics": {
+    "scenario_id": "drone_uav_like_01_+00db",
+    "method": "wiener",
+    "exec_time_ms": 118.16,
+    "rtf": 0.029539,
+    "input_snr_db": 0.0,
+    "output_snr_db": 1.7536,
+    "gain_db": 1.7536,
+    "stoi": 0.8322,
+    "pesq": 1.225
+  },
+  "telemetry": {
+    "speech_confidence": 0.7448034719772406,
+    "mean_gain": 0.5037108063697815
+  }
+}

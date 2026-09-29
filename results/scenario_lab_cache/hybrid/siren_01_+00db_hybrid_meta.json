@@ -1,0 +1,27 @@
+{
+  "metrics": {
+    "scenario_id": "siren_01_+00db",
+    "method": "hybrid",
+    "exec_time_ms": 1402.58,
+    "rtf": 0.350644,
+    "input_snr_db": 0.0,
+    "output_snr_db": 7.539,
+    "gain_db": 7.539,
+    "stoi": 0.8694,
+    "pesq": 1.4585
+  },
+  "telemetry": {
+    "anc_engine": "teammate_frozen",
+    "processing_time_sec": 1.4023846999998568,
+    "real_time_factor": 0.3505961749999642,
+    "duration_sec": 4.0,
+    "speech_confidence": 0.7172511731925548,
+    "average_regime_confidence": 0.9698197994987469,
+    "average_weights": {
+      "wiener": 0.4059241712093353,
+      "neural": 0.11359398066997528,
+      "anc": 0.44919759035110474,
+      "passthrough": 0.03128426522016525
+    }
+  }
+}

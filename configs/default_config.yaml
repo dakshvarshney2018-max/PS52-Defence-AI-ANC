@@ -1,0 +1,76 @@
+# Default System Configuration for PS52_DANC
+
+project:
+  name: "PS52_DANC"
+  version: "0.1.0"
+  description: "Defence AI + Adaptive Noise Cancellation Prototype"
+
+audio:
+  sample_rate: 16000
+  frame_length_ms: 20
+  hop_length_ms: 10
+  channels: 1
+  normalize: true
+
+fxlms:
+  filter_length: 128
+  step_size_mu: 0.005
+  leakage_gamma: 0.0001
+  secondary_path_order: 64
+
+impulse_guard:
+  energy_threshold_multiplier: 5.0
+  attack_time_ms: 1.0
+  release_time_ms: 50.0
+  max_attenuation_db: 40.0
+
+regime_estimator:
+  window_sec: 1.0
+  stationary_flux_threshold: 0.15
+  impulsive_crest_factor_threshold: 12.0
+
+ai_enhancer:
+  model_type: "lightweight_spectral_mask"
+  confidence_min: 0.3
+  confidence_max: 0.9
+
+hybrid_controller:
+  weights:
+    fxlms_default: 0.5
+    ai_default: 0.5
+  regime_rules:
+    stationary:
+      fxlms_weight: 0.8
+      ai_weight: 0.2
+    non_stationary:
+      fxlms_weight: 0.3
+      ai_weight: 0.7
+    impulsive:
+      fxlms_weight: 0.1
+      ai_weight: 0.1
+      pass_through_attenuation: true
+
+dataset:
+  raw_speech: "data/raw/speech"
+  raw_noise: "data/raw/noise"
+  processed_speech: "data/processed/speech"
+  processed_noise: "data/processed/noise"
+  processed_mixtures: "data/processed/mixtures"
+  metadata: "data/metadata"
+  normalization:
+    method: "rms"
+    target_rms_dbfs: -26.0
+    silence_threshold_rms: 0.002
+  splits:
+    seed: 52
+    train_ratio: 0.70
+    validation_ratio: 0.15
+    test_ratio: 0.15
+  mix_snrs_db: [-5, 0, 5, 10, 15, 20]
+
+paths:
+  clean_speech: "data/clean_speech"
+  noise: "data/noise"
+  mixtures: "data/mixtures"
+  models: "models"
+  results: "results"

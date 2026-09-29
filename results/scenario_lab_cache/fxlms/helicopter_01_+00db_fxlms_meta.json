@@ -1,0 +1,26 @@
+{
+  "metrics": {
+    "scenario_id": "helicopter_01_+00db",
+    "method": "fxlms",
+    "exec_time_ms": 931.06,
+    "rtf": 0.232764,
+    "input_snr_db": -0.0,
+    "output_snr_db": 12.0989,
+    "gain_db": 12.0989,
+    "stoi": 0.8624,
+    "pesq": 1.5742
+  },
+  "telemetry": {
+    "name": "teammate_frozen",
+    "semantic_label": "Offline Simulated-Reference Acoustic ANC",
+    "filter_length": 64,
+    "mu": 0.01,
+    "epsilon": 1e-08,
+    "leakage": 0.0,
+    "max_abs_weight": 0.4441934563419543,
+    "weight_l2_norm": 0.6106327031407159,
+    "max_error_power": 0.12255451828241348,
+    "impulse_guard_inside_baseline": false,
+    "anc_active": true
+  }
+}

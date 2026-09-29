@@ -1,0 +1,17 @@
+{
+  "metrics": {
+    "scenario_id": "wind_01_+00db",
+    "method": "wiener",
+    "exec_time_ms": 45.47,
+    "rtf": 0.011367,
+    "input_snr_db": -0.0,
+    "output_snr_db": 2.1502,
+    "gain_db": 2.1502,
+    "stoi": 0.8088,
+    "pesq": 1.2264
+  },
+  "telemetry": {
+    "speech_confidence": 0.7569764964788268,
+    "mean_gain": 0.4574296176433563
+  }
+}

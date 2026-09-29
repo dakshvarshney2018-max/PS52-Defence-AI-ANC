@@ -1,0 +1,17 @@
+{
+  "metrics": {
+    "scenario_id": "siren_01_+00db",
+    "method": "neural",
+    "exec_time_ms": 81.64,
+    "rtf": 0.02041,
+    "input_snr_db": 0.0,
+    "output_snr_db": 2.3045,
+    "gain_db": 2.3045,
+    "stoi": 0.8155,
+    "pesq": 1.2389
+  },
+  "telemetry": {
+    "speech_confidence": 0.5426743030548096,
+    "mean_gain": 0.0
+  }
+}

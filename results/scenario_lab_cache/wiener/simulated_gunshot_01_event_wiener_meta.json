@@ -1,0 +1,17 @@
+{
+  "metrics": {
+    "scenario_id": "simulated_gunshot_01_event",
+    "method": "wiener",
+    "exec_time_ms": 160.75,
+    "rtf": 0.040187,
+    "input_snr_db": 10.0001,
+    "output_snr_db": 9.9742,
+    "gain_db": -0.0259,
+    "stoi": 0.8792,
+    "pesq": 1.6949
+  },
+  "telemetry": {
+    "speech_confidence": 0.856101235627003,
+    "mean_gain": 0.5543009638786316
+  }
+}
