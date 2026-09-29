@@ -82,6 +82,7 @@ def sidebar_data_source() -> Path:
 
 
 def header():
+    inject_css()
     st.markdown(
         """
         <div class="lab-header">
@@ -209,6 +210,7 @@ from architecture import section_architecture_limitations
 
 
 def main():
+    inject_css()
     repo_root = sidebar_data_source()
     ok, missing = check_data_available(repo_root)
 

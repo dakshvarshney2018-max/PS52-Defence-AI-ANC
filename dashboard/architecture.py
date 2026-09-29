@@ -60,7 +60,7 @@ def section_architecture_limitations(store):
     col_diag, col_eq = st.columns([1.3, 1])
     with col_diag:
         st.markdown("**SIGNAL PATH**")
-        st.html(_architecture_diagram())
+        st.markdown(_architecture_diagram(), unsafe_allow_html=True)
     with col_eq:
         st.markdown("**HYBRID BLEND**")
         st.latex(r"y_{hybrid}[n] = w_w y_{wiener}[n] + w_n y_{neural}[n] + w_a y_{anc}[n] + w_p y_{noisy}[n]")
@@ -103,5 +103,5 @@ def section_architecture_limitations(store):
     cols = st.columns(3)
     for i, (k, v) in enumerate(cards):
         with cols[i % 3]:
-            st.html(claim_card(k, v))
+            st.markdown(claim_card(k, v), unsafe_allow_html=True)
 

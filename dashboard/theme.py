@@ -19,8 +19,12 @@ STATUS_GOOD = "#4fd07a"
 STATUS_WARN = "#e8b84b"
 STATUS_BAD = "#e8593f"
 
-FONT_SANS = "'IBM Plex Sans', 'Inter', sans-serif"
-FONT_MONO = "'JetBrains Mono', 'IBM Plex Mono', monospace"
+FONT_SANS = (
+    "'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+)
+FONT_MONO = (
+    "'JetBrains Mono', 'IBM Plex Mono', 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', monospace"
+)
 
 PLOTLY_TEMPLATE = "plotly_dark"
 
@@ -44,19 +48,25 @@ def inject_css():
     st.markdown(
         f"""
         <style>
-        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
-        html, body, [class*="css"] {{
+        /* Global typography hierarchy & resets */
+        html, body, .stApp,
+        div[data-testid="stAppViewContainer"],
+        div[data-testid="stMarkdownContainer"],
+        div[data-testid="stText"],
+        div[data-testid="stWidgetLabel"] label,
+        .stMarkdown, p, span, label {{
             font-family: {FONT_SANS};
         }}
 
         .stApp {{
-            background-color: {BG_PRIMARY};
-            background-image:
-                linear-gradient(180deg, {BG_PRIMARY} 0%, #0c111a 100%);
+            background-color: {BG_PRIMARY} !important;
+            background-image: linear-gradient(180deg, {BG_PRIMARY} 0%, #0c111a 100%) !important;
+            color: {TEXT_PRIMARY} !important;
         }}
 
-        /* Responsive wide container for Streamlit Cloud */
+        /* Responsive wide container for desktop view */
         .main .block-container,
         div[data-testid="stAppViewBlockContainer"] {{
             max-width: 95% !important;
@@ -66,148 +76,200 @@ def inject_css():
             padding-right: 2rem !important;
         }}
 
+        /* Sidebar */
         section[data-testid="stSidebar"] {{
-            background-color: {BG_PANEL};
-            border-right: 1px solid {BORDER};
+            background-color: {BG_PANEL} !important;
+            border-right: 1px solid {BORDER} !important;
+        }}
+        section[data-testid="stSidebar"] .block-container {{
+            padding-top: 2rem !important;
+            padding-left: 1.2rem !important;
+            padding-right: 1.2rem !important;
         }}
 
-        /* Headline */
+        /* Headline / Header Card */
         .lab-header {{
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            padding: 18px 22px;
-            background: linear-gradient(135deg, {BG_PANEL} 0%, {BG_PANEL_ALT} 100%);
-            border: 1px solid {BORDER};
-            border-radius: 6px;
-            margin-bottom: 14px;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 6px !important;
+            padding: 18px 22px !important;
+            background: linear-gradient(135deg, {BG_PANEL} 0%, {BG_PANEL_ALT} 100%) !important;
+            border: 1px solid {BORDER} !important;
+            border-radius: 8px !important;
+            margin-bottom: 16px !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35) !important;
         }}
         .lab-title {{
-            font-family: {FONT_MONO};
-            letter-spacing: 0.08em;
-            font-size: 0.95rem;
-            color: {ACCENT_CYAN};
-            text-transform: uppercase;
+            font-family: {FONT_MONO} !important;
+            letter-spacing: 0.08em !important;
+            font-size: 0.95rem !important;
+            color: {ACCENT_CYAN} !important;
+            text-transform: uppercase !important;
+            font-weight: 600 !important;
         }}
         .lab-subtitle {{
-            font-size: 1.05rem;
-            color: {TEXT_PRIMARY};
-            font-weight: 500;
+            font-family: {FONT_SANS} !important;
+            font-size: 1.05rem !important;
+            color: {TEXT_PRIMARY} !important;
+            font-weight: 500 !important;
+            margin: 1px 0 !important;
         }}
         .lab-pipeline {{
-            font-family: {FONT_MONO};
-            font-size: 0.82rem;
-            color: {TEXT_MUTED};
-            letter-spacing: 0.03em;
-            margin-top: 2px;
+            font-family: {FONT_MONO} !important;
+            font-size: 0.82rem !important;
+            color: {TEXT_MUTED} !important;
+            letter-spacing: 0.04em !important;
+            margin-top: 2px !important;
         }}
         .badge-row {{
-            display: flex;
-            gap: 10px;
-            margin-top: 8px;
-            flex-wrap: wrap;
+            display: flex !important;
+            gap: 10px !important;
+            margin-top: 10px !important;
+            flex-wrap: wrap !important;
+            align-items: center !important;
         }}
         .badge {{
-            font-family: {FONT_MONO};
-            font-size: 0.72rem;
-            padding: 3px 9px;
-            border-radius: 3px;
-            border: 1px solid {BORDER};
-            background: {BG_PRIMARY};
-            color: {TEXT_MUTED};
-            letter-spacing: 0.03em;
+            font-family: {FONT_MONO} !important;
+            font-size: 0.72rem !important;
+            padding: 4px 10px !important;
+            border-radius: 4px !important;
+            border: 1px solid {BORDER} !important;
+            background: {BG_PRIMARY} !important;
+            color: {TEXT_MUTED} !important;
+            letter-spacing: 0.03em !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            line-height: 1.2 !important;
+            font-weight: 500 !important;
         }}
-        .badge.good {{ color: {STATUS_GOOD}; border-color: {STATUS_GOOD}44; }}
-        .badge.cyan {{ color: {ACCENT_CYAN}; border-color: {ACCENT_CYAN}44; }}
-        .badge.warn {{ color: {STATUS_WARN}; border-color: {STATUS_WARN}44; }}
+        .badge.good {{
+            color: {STATUS_GOOD} !important;
+            border-color: rgba(79, 208, 122, 0.45) !important;
+            background: rgba(79, 208, 122, 0.12) !important;
+        }}
+        .badge.cyan {{
+            color: {ACCENT_CYAN} !important;
+            border-color: rgba(61, 214, 208, 0.45) !important;
+            background: rgba(61, 214, 208, 0.12) !important;
+        }}
+        .badge.warn {{
+            color: {STATUS_WARN} !important;
+            border-color: rgba(232, 184, 75, 0.45) !important;
+            background: rgba(232, 184, 75, 0.12) !important;
+        }}
 
         /* KPI cards */
         .kpi-card {{
-            background: {BG_PANEL};
-            border: 1px solid {BORDER};
-            border-radius: 6px;
-            padding: 12px 14px;
-            height: 100%;
+            background-color: {BG_PANEL} !important;
+            border: 1px solid {BORDER} !important;
+            border-radius: 6px !important;
+            padding: 12px 14px !important;
+            height: 100% !important;
+            box-sizing: border-box !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
         }}
         .kpi-label {{
-            font-family: {FONT_MONO};
-            font-size: 0.68rem;
-            color: {TEXT_MUTED};
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
+            font-family: {FONT_MONO} !important;
+            font-size: 0.68rem !important;
+            color: {TEXT_MUTED} !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.06em !important;
+            font-weight: 500 !important;
+            line-height: 1.2 !important;
+            margin-bottom: 2px !important;
         }}
         .kpi-value {{
-            font-size: 1.55rem;
-            font-weight: 600;
-            color: {TEXT_PRIMARY};
-            margin-top: 2px;
-            font-family: {FONT_MONO};
+            font-size: 1.55rem !important;
+            font-weight: 600 !important;
+            color: {TEXT_PRIMARY} !important;
+            margin-top: 2px !important;
+            margin-bottom: 2px !important;
+            font-family: {FONT_MONO} !important;
+            letter-spacing: -0.01em !important;
+            line-height: 1.2 !important;
         }}
         .kpi-sub {{
-            font-size: 0.72rem;
-            color: {TEXT_MUTED};
-            margin-top: 2px;
+            font-size: 0.72rem !important;
+            color: {TEXT_MUTED} !important;
+            margin-top: 2px !important;
+            font-family: {FONT_SANS} !important;
+            line-height: 1.3 !important;
         }}
 
         /* Section headers */
         .section-tag {{
-            font-family: {FONT_MONO};
-            font-size: 0.72rem;
-            color: {ACCENT_CYAN};
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            border-bottom: 1px solid {BORDER};
-            padding-bottom: 6px;
-            margin-bottom: 10px;
-            margin-top: 4px;
+            font-family: {FONT_MONO} !important;
+            font-size: 0.82rem !important;
+            color: {ACCENT_CYAN} !important;
+            letter-spacing: 0.08em !important;
+            text-transform: uppercase !important;
+            border-bottom: 1px solid {BORDER} !important;
+            padding-bottom: 6px !important;
+            margin-bottom: 12px !important;
+            margin-top: 6px !important;
+            font-weight: 600 !important;
         }}
 
         /* Status pill */
         .pill {{
-            display: inline-block;
-            font-family: {FONT_MONO};
-            font-size: 0.72rem;
-            padding: 2px 8px;
-            border-radius: 3px;
-            font-weight: 600;
+            display: inline-block !important;
+            font-family: {FONT_MONO} !important;
+            font-size: 0.72rem !important;
+            padding: 2px 8px !important;
+            border-radius: 3px !important;
+            font-weight: 600 !important;
         }}
-        .pill.met {{ background: {STATUS_GOOD}22; color: {STATUS_GOOD}; }}
-        .pill.partial {{ background: {STATUS_WARN}22; color: {STATUS_WARN}; }}
-        .pill.notmet {{ background: {STATUS_BAD}22; color: {STATUS_BAD}; }}
+        .pill.met {{ background: rgba(79, 208, 122, 0.18) !important; color: {STATUS_GOOD} !important; border: 1px solid rgba(79, 208, 122, 0.35) !important; }}
+        .pill.partial {{ background: rgba(232, 184, 75, 0.18) !important; color: {STATUS_WARN} !important; border: 1px solid rgba(232, 184, 75, 0.35) !important; }}
+        .pill.notmet {{ background: rgba(232, 89, 63, 0.18) !important; color: {STATUS_BAD} !important; border: 1px solid rgba(232, 89, 63, 0.35) !important; }}
 
+        /* Claim Cards */
         .claim-card {{
-            background: {BG_PANEL};
-            border: 1px solid {BORDER};
-            border-left: 3px solid {ACCENT_TEAL};
-            border-radius: 4px;
-            padding: 10px 12px;
-            margin-bottom: 8px;
+            background: {BG_PANEL} !important;
+            border: 1px solid {BORDER} !important;
+            border-left: 3px solid {ACCENT_TEAL} !important;
+            border-radius: 4px !important;
+            padding: 10px 12px !important;
+            margin-bottom: 8px !important;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
         }}
         .claim-key {{
-            font-family: {FONT_MONO};
-            font-size: 0.68rem;
-            color: {ACCENT_CYAN};
-            letter-spacing: 0.06em;
+            font-family: {FONT_MONO} !important;
+            font-size: 0.68rem !important;
+            color: {ACCENT_CYAN} !important;
+            letter-spacing: 0.06em !important;
+            font-weight: 600 !important;
+            text-transform: uppercase !important;
         }}
         .claim-val {{
-            font-size: 0.86rem;
-            color: {TEXT_PRIMARY};
-            margin-top: 2px;
+            font-size: 0.86rem !important;
+            color: {TEXT_PRIMARY} !important;
+            margin-top: 3px !important;
+            font-family: {FONT_SANS} !important;
+            line-height: 1.4 !important;
         }}
 
         .stTabs [data-baseweb="tab-list"] {{
-            gap: 4px;
+            gap: 4px !important;
         }}
         .stTabs [data-baseweb="tab"] {{
-            background: {BG_PANEL};
-            border: 1px solid {BORDER};
-            border-radius: 4px 4px 0 0;
-            font-family: {FONT_MONO};
-            font-size: 0.8rem;
+            background: {BG_PANEL} !important;
+            border: 1px solid {BORDER} !important;
+            border-radius: 4px 4px 0 0 !important;
+            font-family: {FONT_MONO} !important;
+            font-size: 0.8rem !important;
+            color: {TEXT_MUTED} !important;
+        }}
+        .stTabs [aria-selected="true"] {{
+            color: {ACCENT_CYAN} !important;
+            border-bottom: 2px solid {ACCENT_CYAN} !important;
         }}
 
         div[data-testid="stMetricValue"] {{
-            font-family: {FONT_MONO};
+            font-family: {FONT_MONO} !important;
         }}
         </style>
         """,

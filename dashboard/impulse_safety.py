@@ -21,9 +21,10 @@ def _stage_diagram(row):
     fig = go.Figure()
     for i, (label, color) in enumerate(stages):
         fig.add_shape(type="rect", x0=i, x1=i + 0.85, y0=0, y1=1,
-                       fillcolor=color, opacity=0.85, line=dict(color=color))
-        fig.add_annotation(x=i + 0.425, y=0.5, text=label.replace("\n", "<br>"),
-                            showarrow=False, font=dict(color="#0a0e14", size=11, family="IBM Plex Mono"))
+                       fillcolor=color, opacity=0.9, line=dict(color=color))
+        text_color = "#ffffff" if color == "#5b6478" else "#0a0e14"
+        fig.add_annotation(x=i + 0.425, y=0.5, text=f"<b>{label.replace(chr(10), '<br>')}</b>",
+                            showarrow=False, font=dict(color=text_color, size=11, family="JetBrains Mono, monospace"))
         if i < n - 1:
             fig.add_annotation(x=i + 0.95, y=0.5, text="→", showarrow=False,
                                 font=dict(color="#8b98ac", size=18))

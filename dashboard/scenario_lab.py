@@ -153,12 +153,12 @@ def section_scenario_lab(store):
     gain_display = live_metrics.get("gain_db")
     if gain_display is None:
         gain_display = row.get(f"{method}_gain_db", 0.0)
-    st.html(claim_card(
+    st.markdown(claim_card(
         "GENUINE PROCESSING EVIDENCE",
         f"Method: **{METHOD_LABELS[method]}** &nbsp;&bull;&nbsp; Case: `{scenario_id}`. "
         f"Measured objective SNR improvement is **{gain_display:+.2f} dB**. "
         f"Audio and transformations are strictly generated from the real DSP/AI execution with zero fabrication."
-    ))
+    ), unsafe_allow_html=True)
 
     st.markdown("<br>", unsafe_allow_html=True)
 
@@ -188,7 +188,7 @@ def section_scenario_lab(store):
         if rtf is None and method == "hybrid":
             rtf = row.get("hybrid_rtf", np.nan)
 
-        st.html(claim_card("EVALUATION CASE", f"{scenario_id} &nbsp;&bull;&nbsp; {METHOD_LABELS[method]}"))
+        st.markdown(claim_card("EVALUATION CASE", f"{scenario_id} &nbsp;&bull;&nbsp; {METHOD_LABELS[method]}"), unsafe_allow_html=True)
         m1, m2 = st.columns(2)
         m1.metric("Input SNR", f"{input_snr:.2f} dB")
         m2.metric("Output SNR", f"{output_snr:.2f} dB")

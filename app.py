@@ -25,8 +25,10 @@ if str(ROOT) not in sys.path:
 if str(DASHBOARD_DIR) not in sys.path:
     sys.path.insert(0, str(DASHBOARD_DIR))
 
+from dashboard.theme import inject_css
 from dashboard.app import main
 
 if __name__ == "__main__":
+    inject_css()
     main()
 
