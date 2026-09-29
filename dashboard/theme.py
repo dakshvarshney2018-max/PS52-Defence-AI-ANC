@@ -44,7 +44,7 @@ def inject_css():
     st.markdown(
         f"""
         <style>
-        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
         html, body, [class*="css"] {{
             font-family: {FONT_SANS};
@@ -56,37 +56,19 @@ def inject_css():
                 linear-gradient(180deg, {BG_PRIMARY} 0%, #0c111a 100%);
         }}
 
-        /* Responsive wide container for desktop and Streamlit Cloud */
+        /* Responsive wide container for Streamlit Cloud */
         .main .block-container,
-        div[data-testid="stAppViewBlockContainer"],
-        div[data-testid="block-container"],
-        section.main > div {{
+        div[data-testid="stAppViewBlockContainer"] {{
             max-width: 95% !important;
-            width: 95% !important;
-            padding-top: 1.2rem !important;
-            padding-bottom: 2.5rem !important;
+            padding-top: 1.5rem !important;
+            padding-bottom: 2rem !important;
             padding-left: 2rem !important;
             padding-right: 2rem !important;
-            margin-left: auto !important;
-            margin-right: auto !important;
         }}
 
-        @media (max-width: 992px) {{
-            .main .block-container,
-            div[data-testid="stAppViewBlockContainer"] {{
-                max-width: 98% !important;
-                width: 98% !important;
-                padding-left: 1rem !important;
-                padding-right: 1rem !important;
-            }}
-        }}
-
-        /* Sidebar styling */
         section[data-testid="stSidebar"] {{
             background-color: {BG_PANEL};
             border-right: 1px solid {BORDER};
-            min-width: 260px !important;
-            max-width: 320px !important;
         }}
 
         /* Headline */
@@ -139,72 +121,32 @@ def inject_css():
         .badge.cyan {{ color: {ACCENT_CYAN}; border-color: {ACCENT_CYAN}44; }}
         .badge.warn {{ color: {STATUS_WARN}; border-color: {STATUS_WARN}44; }}
 
-        /* Benchmark Section Header */
-        .benchmark-header {{
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 6px;
-            border-bottom: 1px solid {BORDER};
-            padding-bottom: 8px;
-            margin-top: 10px;
-            margin-bottom: 12px;
-        }}
-        .benchmark-title {{
-            font-family: {FONT_MONO};
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: {ACCENT_CYAN};
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }}
-        .benchmark-meta {{
-            font-size: 0.75rem;
-            color: {TEXT_MUTED};
-        }}
-
-        /* Responsive KPI cards */
+        /* KPI cards */
         .kpi-card {{
             background: {BG_PANEL};
             border: 1px solid {BORDER};
             border-radius: 6px;
             padding: 12px 14px;
-            min-width: 0;
-            box-sizing: border-box;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-            transition: border-color 0.15s ease;
-        }}
-        .kpi-card:hover {{
-            border-color: {ACCENT_CYAN}88;
+            height: 100%;
         }}
         .kpi-label {{
             font-family: {FONT_MONO};
             font-size: 0.68rem;
             color: {TEXT_MUTED};
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            letter-spacing: 0.06em;
         }}
         .kpi-value {{
             font-size: 1.55rem;
-            font-weight: 700;
+            font-weight: 600;
             color: {TEXT_PRIMARY};
-            margin-top: 4px;
-            margin-bottom: 2px;
+            margin-top: 2px;
             font-family: {FONT_MONO};
-            white-space: nowrap;
         }}
         .kpi-sub {{
             font-size: 0.72rem;
             color: {TEXT_MUTED};
             margin-top: 2px;
-            line-height: 1.35;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }}
 
         /* Section headers */
