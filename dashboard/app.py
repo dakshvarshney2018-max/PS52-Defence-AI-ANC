@@ -12,6 +12,14 @@ Launch from the repository root:
 from __future__ import annotations
 
 from pathlib import Path
+import sys
+
+_DASHBOARD_DIR = Path(__file__).resolve().parent
+_REPO_ROOT = _DASHBOARD_DIR.parent
+if str(_DASHBOARD_DIR) not in sys.path:
+    sys.path.insert(0, str(_DASHBOARD_DIR))
+if str(_REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT))
 
 import numpy as np
 import pandas as pd
@@ -26,11 +34,15 @@ from theme import (
 from data_loader import get_repo_root, check_data_available, get_store
 import audio_utils as au
 
-st.set_page_config(
-    page_title="PS52 - Defence Acoustic Intelligence Lab",
-    layout="wide",
-    initial_sidebar_state="expanded",
-)
+try:
+    st.set_page_config(
+        page_title="PS52 - Defence Acoustic Intelligence Lab",
+        page_icon="🛡️",
+        layout="wide",
+        initial_sidebar_state="expanded",
+    )
+except Exception:
+    pass
 inject_css()
 
 METHODS = ["raw", "wiener", "neural", "fxlms", "hybrid"]
@@ -100,36 +112,53 @@ def section_mission_control(store):
     c110 = cs.get("overall_110_defence", cs.get("overall_110_defence_scenarios"))
     neural_rtf = store.neural_component_rtf
 
-    colA, colB = st.columns(2)
-    with colA:
-        st.markdown("**CONTROLLED BENCHMARK &mdash; 300 mixtures**")
-        c1, c2, c3, c4 = st.columns(4)
-        c1.markdown(kpi_card("SNR Gain (Hybrid)", f"+{c300['mean_hybrid_gain_db']:.2f} dB",
-                              f"input {c300['mean_input_snr_db']:.2f} dB"), unsafe_allow_html=True)
-        c2.markdown(kpi_card("STOI (Hybrid)", f"{c300['mean_hybrid_stoi']:.4f}",
-                              f"raw {c300['mean_raw_stoi']:.4f}"), unsafe_allow_html=True)
-        c3.markdown(kpi_card("PESQ (Hybrid)", f"{c300['mean_hybrid_pesq']:.4f}",
-                              "target &gt; 2.5"), unsafe_allow_html=True)
-        c4.markdown(kpi_card("RTF (Hybrid)", f"{c300['mean_hybrid_rtf']:.4f}x",
-                              "desktop CPU mean (target &lt; 0.10x)"), unsafe_allow_html=True)
-        st.markdown(f"<div style='color:#8b98ac;font-size:0.8rem;margin-top:6px;'>"
-                    f"n = {c300['total_count']} controlled mixtures &bull; Neural Component RTF: <b>{neural_rtf:.4f}x</b></div>",
-                    unsafe_allow_html=True)
+    # Benchmark 1: Controlled Benchmark (300 Mixtures)
+    st.markdown(
+        f'<div class="benchmark-header">'
+        f'<span class="benchmark-title">&#9632; Controlled Benchmark &mdash; 300 Mixtures</span>'
+        f'<span class="benchmark-meta">n = {c300["total_count"]} controlled mixtures &bull; Speech + Noise (-5 to +20 dB SNR) &bull; Neural Component RTF: <b>{neural_rtf:.4f}x</b></span>'
+        f'</div>',
+        unsafe_allow_html=True,
+    )
+    c1, c2, c3, c4 = st.columns(4)
+    with c1:
+        st.markdown(kpi_card("SNR Gain (Hybrid)", f"+{c300['mean_hybrid_gain_db']:.2f} dB",
+                             f"input {c300['mean_input_snr_db']:.2f} dB"), unsafe_allow_html=True)
+    with c2:
+        st.markdown(kpi_card("STOI (Hybrid)", f"{c300['mean_hybrid_stoi']:.4f}",
+                             f"raw {c300['mean_raw_stoi']:.4f}"), unsafe_allow_html=True)
+    with c3:
+        st.markdown(kpi_card("PESQ (Hybrid)", f"{c300['mean_hybrid_pesq']:.4f}",
+                             "WB ITU-T P.862.2"), unsafe_allow_html=True)
+    with c4:
+        st.markdown(kpi_card("RTF (Hybrid)", f"{c300['mean_hybrid_rtf']:.4f}x",
+                             "desktop CPU mean (target &lt; 0.10x)"), unsafe_allow_html=True)
 
-    with colB:
-        st.markdown("**DEFENCE SCENARIO BENCHMARK &mdash; 110 curated scenarios**")
-        d1, d2, d3, d4 = st.columns(4)
-        d1.markdown(kpi_card("SNR Gain (Hybrid)", f"+{c110['mean_hybrid_gain_db']:.2f} dB",
-                              f"input {c110['mean_input_snr_db']:.2f} dB"), unsafe_allow_html=True)
-        d2.markdown(kpi_card("STOI (Hybrid)", f"{c110['mean_hybrid_stoi']:.4f}",
-                              f"raw {c110['mean_raw_stoi']:.4f}"), unsafe_allow_html=True)
-        d3.markdown(kpi_card("PESQ (Hybrid)", f"{c110['mean_hybrid_pesq']:.4f}",
-                              "target &gt; 2.5"), unsafe_allow_html=True)
-        d4.markdown(kpi_card("RTF (Hybrid)", f"{c110['mean_hybrid_rtf']:.4f}x",
-                              "defence mean, desktop CPU"), unsafe_allow_html=True)
-        st.markdown(f"<div style='color:#8b98ac;font-size:0.8rem;margin-top:6px;'>"
-                    f"n = {c110['total_count']} defence scenarios &bull; Curated Threat Scenarios</div>",
-                    unsafe_allow_html=True)
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    # Benchmark 2: Defence Scenario Benchmark (110 Curated Threats)
+    st.markdown(
+        f'<div class="benchmark-header">'
+        f'<span class="benchmark-title">&#9632; Defence Scenario Benchmark &mdash; 110 Curated Threats</span>'
+        f'<span class="benchmark-meta">n = {c110["total_count"]} defence scenarios &bull; 7 Curated Threat Categories</span>'
+        f'</div>',
+        unsafe_allow_html=True,
+    )
+    d1, d2, d3, d4 = st.columns(4)
+    with d1:
+        st.markdown(kpi_card("SNR Gain (Hybrid)", f"+{c110['mean_hybrid_gain_db']:.2f} dB",
+                             f"input {c110['mean_input_snr_db']:.2f} dB"), unsafe_allow_html=True)
+    with d2:
+        st.markdown(kpi_card("STOI (Hybrid)", f"{c110['mean_hybrid_stoi']:.4f}",
+                             f"raw {c110['mean_raw_stoi']:.4f}"), unsafe_allow_html=True)
+    with d3:
+        st.markdown(kpi_card("PESQ (Hybrid)", f"{c110['mean_hybrid_pesq']:.4f}",
+                             "WB ITU-T P.862.2"), unsafe_allow_html=True)
+    with d4:
+        st.markdown(kpi_card("RTF (Hybrid)", f"{c110['mean_hybrid_rtf']:.4f}x",
+                             "defence mean, desktop CPU"), unsafe_allow_html=True)
+
+    st.markdown("<br>", unsafe_allow_html=True)
 
     with st.expander("Candidate vs Frozen Baseline Audited Improvements"):
         base_300 = store.final_summary["overall_300_mixtures"]
